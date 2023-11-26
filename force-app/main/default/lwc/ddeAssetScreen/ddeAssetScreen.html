@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="make" label="Make" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="product" label="Product Category" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="model" label="Model" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="variant" label="Variant" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-combobox required="true" name="supplier" label="Supplier" onchange={genericOnChange} disabled={disable}></lightning-combobox>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="exchangeValue" label="Vehicle Exchange Value" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="marginMoney" label="Margin Money" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+            <lightning-input type="text" required="true" name="totalMarginMoney" label="Total Margin Money" onchange={genericOnChange} disabled={disable}></lightning-input>
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small slds-p-top_large">
+            <lightning-button label="Clear" onclick={onClear} disabled={disable}></lightning-button>
+        </div>
+    </div>
+</template>

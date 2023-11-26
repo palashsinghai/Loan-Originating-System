@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        
+        <div class="slds-grid slds-wrap">
+            <div class="slds-m-bottom--small slds-section-title--divider sectionTitle">
+                DDE Screen
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap">
+            <div class="slds-grid slds-grid--align-spread slds-section-title--divider sectionTitle">
+                Address Details
+            </div>
+            <div class="slds-grid slds-wrap">
+                <c-dde-asset-screen loan-id={loanId}></c-dde-asset-screen>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap">
+            <div class="slds-grid slds-grid--align-spread slds-section-title--divider sectionTitle">
+                Add Attachments
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size--1-of-1">
+                    <div class="slds-p-top_large slds-float_right">
+                        <lightning-button variant="brand" label="View/Upload Document" onclick={handleUploadDocument} disabled={disable}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <div class="slds-grid slds-grid_align-end">
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Cancel" onclick={handleCancel} disabled={disable}></lightning-button>
+                </div>
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Next" onclick={handleNext} disabled={disable}></lightning-button>
+                </div>
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Save As Draft" onclick={handleSave} disabled={disable}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

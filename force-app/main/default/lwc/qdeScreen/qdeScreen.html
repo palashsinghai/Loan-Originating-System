@@ -1,0 +1,86 @@
+<template>
+    <div>
+        <div class="slds-box slds-m-top_small slds-m-bottom_small">
+                <div class="slds-grid slds-grid--align-spread slds-section-title--divider sectionTitle">
+                    Applicant Details
+                </div>
+                <lightning-card>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="name" label="Name" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="date" required="true" name="dateOfBirth" label="Date Of Birth" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="email" required="true" name="email" label="Email Id" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="mobile" label="Mobile Number" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-combobox label="Employment Type" name="employmentType" options={employmentTypeOptions} onchange={genericOnChange} placeholder="" required="true" disabled={disable}></lightning-combobox>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-combobox label="Gender" name="gender" options={genderOptions} onchange={genericOnChange} placeholder="" required="true" disabled={disable}></lightning-combobox>
+                        </div>
+                    </div>
+                </lightning-card>
+            
+
+                <div class="slds-grid slds-grid--align-spread slds-section-title--divider sectionTitle">
+                    Address Details
+                </div>
+                
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="house" label="House No., Building Name" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="road" label="Road Name, Area, Colony" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="addressLine" label="Address line" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="landmark" label="Landmark" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="pincode" label="Pincode" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="state" label="State" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="city" label="City" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                    </div>
+                
+
+                <div class="slds-m-top_small slds-m-bottom_small">
+                    <div class="slds-grid slds-grid--align-spread slds-section-title--divider sectionTitle">
+                        Loan Details
+                    </div>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3 slds-p-horizontal--small">
+                            <lightning-input type="text" required="true" name="loanAmount" label="Requested Loan Amount" onchange={genericOnChange} disabled={disable}></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <div class="slds-grid slds-grid_align-end">
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Cancel" onclick={handleCancel} disabled={disable}></lightning-button>
+                </div>
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Next" onclick={handleNext} disabled={disable}></lightning-button>
+                </div>
+                <div class="slds-col slds-p-horizontal--small">
+                    <lightning-button label="Save As Draft" onclick={handleSave} disabled={disable}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        
+        <div class="slds-grid slds-wrap">
+            <div class="slds-m-bottom--small slds-section-title--divider sectionTitle">
+                SEARCH SCREEN
+            </div>
+        </div>
+        
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal--small">
+                <lightning-input type="tel" required="true" name="mobile" label="Mobile No" onchange={genericOnChange}></lightning-input>
+            </div>
+            <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal--small">
+                <lightning-input type="date" required="true" name="dateOfBirth" label="Date of Birth" onchange={genericOnChange}></lightning-input>
+            </div>
+            <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal--small">
+                <lightning-combobox label="Type of Personal Identifier" name="typeOfIdentifier" options={identifierOptions} onchange={handleIdentifierChange} placeholder="" required="true"></lightning-combobox>
+            </div>
+            
+            <template if:true={isForm60Selected}>
+                <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal--small">
+                    <lightning-combobox label="Type of official Valid Document" name="typeOfValidDocument" options={documentOptions} onchange={handleIdentifierChange} placeholder="" required="true"></lightning-combobox>
+                </div>
+            </template>
+            
+            <template if:true={showIdentifier}>
+                <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 slds-p-horizontal--small">
+                    <lightning-input type="text" name="identifier" required="true" label="Identifier No" onchange={genericOnChange} max-length="20"></lightning-input>
+                </div>
+            </template>  
+        </div>
+        <div class="slds-col slds-grid">
+            <div class="slds-size--1-of-1 slds-p-horizontal--small">
+                <lightning-button label="Search" onclick={handleSearchClick}></lightning-button>
+                <template if:true={searchClicked}>
+                    <div class="">{counter}</div>
+                </template>
+            </div>
+        </div>
+        <template if:true={showProceed}>
+            <div class="slds-float_right">
+                    <lightning-button label="Proceed" onclick={handleProceed}></lightning-button>
+            </div>
+        </template>
+        <template if:true={isPanSelected}>
+            <div class="slds-float_right">
+                <lightning-button label="Validate PAN using NSDL" onclick={handleValidatePAN}></lightning-button>
+            </div>
+        </template>
+        
+    </div>
+</template>
